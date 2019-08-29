@@ -1,0 +1,25 @@
+mixin nav-a(img, textZH, textEN)
+    a(href="#")
+        img(src="img/" + img + ".png" alt="連結 縮圖")
+        span=textZH
+        br
+        span=textEN
+
+
+<!DOCTYPE html>
+html(lang="zh")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title 獅子堂 | 首頁 | 黑糖專賣
+        link(rel="stylesheet", href="style.css")
+    body
+        header(id="nav")
+            div(id="logo") LION SUGAR
+                br
+                span 獅子堂黑糖專賣
+            nav
+                +nav-a("home", "關於我們", "ABOUT")
+                +nav-a("location", "全球據點", "LOCATIONS")
+                +nav-a("hot", "熱門經典", "CLASSICAL")
+                +nav-a("contact", "加盟專去", "FRANCHISEE")
