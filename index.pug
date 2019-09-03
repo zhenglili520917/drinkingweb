@@ -6,6 +6,14 @@ mixin nav-a(img, textZH, textEN)
         span=textEN
 
 
+mixin title(img, textZH, textEN)
+    div(class="title")
+        img(src="img/" + img + ".png" alt="連結 縮圖")
+        span=textZH
+        br
+        span=textEN
+
+
 <!DOCTYPE html>
 html(lang="zh")
     head
@@ -23,3 +31,12 @@ html(lang="zh")
                 +nav-a("location", "全球據點", "LOCATIONS")
                 +nav-a("hot", "熱門經典", "CLASSICAL")
                 +nav-a("contact", "加盟專去", "FRANCHISEE")
+        
+        section(id="banner")
+
+        section(id="about")
+            +title("home","關於我們","ABOUT")
+
+            +title("location","全球據點","LOCATIONS")
+            +title("hot","熱門經典","CLASSICAL")
+            +title("contact","加盟專區","FRANCHISEE")
