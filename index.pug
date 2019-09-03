@@ -13,6 +13,16 @@ mixin title(img, textZH, textEN)
         br
         span=textEN
 
+mixin location-box(nameZh, nameEg, img)
+    div(class="location-box")
+        div(class="location-title")
+            div(class="location-text")
+                span=nameZh
+                br
+                span=nameEg
+            img(src="img/", alt="據點")
+        img(src="img/" + img + ".png ", alt="據點")
+
 
 <!DOCTYPE html>
 html(lang="zh")
@@ -35,9 +45,22 @@ html(lang="zh")
         section(id="banner")
 
         section(id="about")
-            div(id="about-bg")
-            +title("home","關於我們","ABOUT")
+            div(class)="bg bg-about")
+            div(class="container")
+                +title("home","關於我們","ABOUT")
 
-            +title("location","全球據點","LOCATIONS")
+        section(id="location")
+            div(class="bg bg-location")
+            div(class="container")
+                +title("location","全球據點","LOCATIONS")
+
+                div(id="location-container")
+                    +location-box("台灣","Taiwan","location_taipei")
+                    +location-box("台灣","Taiwan","location_taipei")
+                    +location-box("台灣","Taiwan","location_taipei")
+
+        div(class="container")
             +title("hot","熱門經典","CLASSICAL")
+
+        div(class="container")    
             +title("contact","加盟專區","FRANCHISEE")
